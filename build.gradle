@@ -13,6 +13,7 @@ buildscript {
 apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'org.springframework.boot'
+apply plugin: 'checkstyle'
 
 group = 'br.com.leonardoferreira'
 version = '0.0.1-SNAPSHOT'
@@ -33,6 +34,17 @@ dependencies {
 
     runtime('com.h2database:h2')
 
+    testCompile('info.cukes:cucumber-java:1.2.4')
+    testCompile('info.cukes:cucumber-junit:1.2.4')
+    testCompile('info.cukes:cucumber-spring:1.2.4')
+
     compileOnly('org.projectlombok:lombok')
     testCompile('org.springframework.boot:spring-boot-starter-test')
 }
+
+checkstyle {
+    toolVersion = "5.9"
+    configFile = new File(rootDir, "checkstyle.xml")
+}
+
+test.dependsOn checkstyleMain

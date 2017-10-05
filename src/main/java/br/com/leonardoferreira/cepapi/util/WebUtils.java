@@ -1,12 +1,5 @@
 package br.com.leonardoferreira.cepapi.util;
 
-/**
- * @author s2it_leferreira
- * @version $Revision: $<br/>
- *          $Id: $
- * @since 10/5/17 6:08 PM
- */
-
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;

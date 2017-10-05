@@ -19,7 +19,8 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 public class ExceptionHandlerController {
 
     @ExceptionHandler(MaxRequestExceeded.class)
-    public void handleMaxRequestExceeded(HttpServletResponse res) throws IOException {
-        res.sendError(HttpStatus.BAD_REQUEST.value(), "Você atingiu o máximo de requisições por dia.");
+    public void handleMaxRequestExceeded(final HttpServletResponse res) throws IOException {
+        res.sendError(HttpStatus.BAD_REQUEST.value(),
+                "Você atingiu o máximo de requisições por dia.");
     }
 }

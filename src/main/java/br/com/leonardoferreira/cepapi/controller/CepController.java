@@ -23,8 +23,9 @@ public class CepController {
     private CepService cepService;
 
     @GetMapping("/{cep}")
-    public CepVO searchCep(@PathVariable String cep, @RequestParam(value = "tkn", required = false) String tkn) {
-        return cepService.cepInformations(cep, tkn);
+    public CepVO searchCep(@PathVariable final String cep,
+            @RequestParam(value = "tkn", required = false) final String tkn) {
+        return cepService.cepInformations(cep.trim().replace("-", ""), tkn);
     }
 
 }

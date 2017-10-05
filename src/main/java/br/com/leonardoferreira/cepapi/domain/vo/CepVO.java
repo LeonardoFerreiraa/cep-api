@@ -37,7 +37,7 @@ public class CepVO {
 
    private String cep;
 
-    public CepVO (final Boolean naoEncontrado, final String cep) {
+    public CepVO(final Boolean naoEncontrado, final String cep) {
         this.naoEncontrado = naoEncontrado;
         this.cep = cep;
     }

@@ -31,7 +31,7 @@ public class IpService {
     private String token;
 
     @Transactional(noRollbackFor = MaxRequestExceeded.class)
-    public void validate (final String tkn) {
+    public void validate(final String tkn) {
         if (token.equals(tkn)) {
             return;
         }
@@ -52,7 +52,7 @@ public class IpService {
         }
     }
 
-    public void cleanIp () {
+    public void cleanIp() {
         ipRepository.deleteAll();
     }
 }

@@ -20,7 +20,7 @@ public class CepService {
     @Autowired
     private IpService ipService;
 
-    public CepVO cepInformations (final String cep, final String tkn) {
+    public CepVO cepInformations(final String cep, final String tkn) {
         ipService.validate(tkn);
         return cepCrawler.cepInformations(cep);
     }
