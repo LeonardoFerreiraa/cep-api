@@ -1,0 +1,163 @@
+
+.str {
+  color: #ffffff;
+}
+.kwd {
+  color: #93C763;
+}
+.com {
+  color: #66747B;
+}
+.typ {
+  color: #678CB1;
+}
+.lit {
+  color: #FACD22;
+}
+.pun {
+  color: #F1F2F3;
+}
+.pln {
+  color: #F1F2F3;
+}
+.tag {
+  color: #8AC763;
+}
+.atn {
+  color: #E0E2E4;
+}
+.atv {
+  color: #EC7600;
+}
+.dec {
+  color: purple;
+}
+
+pre.prettyprint {
+  border: 0px solid #888;
+  border-radius: 4px;
+}
+ol.linenums {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.prettyprint {
+  background: #0a3a65;
+}
+li.L0, li.L1, li.L2, li.L3, li.L4, li.L5, li.L6, li.L7, li.L8, li.L9 {
+  list-style-type: decimal;
+}
+li.L1, li.L3, li.L5, li.L7, li.L9 {
+  background: #131212;
+}
+
+@media print {
+  .str {
+    color: #060;
+  }
+  .kwd {
+    color: #006;
+    font-weight: bold;
+  }
+  .com {
+    color: #600;
+    font-style: italic;
+  }
+  .typ {
+    color: #404;
+    font-weight: bold;
+  }
+  .lit {
+    color: #044;
+  }
+  .pun {
+    color: #440;
+  }
+  .pln {
+    color: #000;
+  }
+  .tag {
+    color: #006;
+    font-weight: bold;
+  }
+  .atn {
+    color: #404;
+  }
+  .atv{
+    color: #060;
+  }
+}
+
+h1, h2, h3, h4, h5 {
+  color: #fff;
+  line-height: 1.2;
+  font-family: 'Roboto';
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+a.bg-info.text-center {
+  display: block;
+  padding: 10px;
+  border-radius: 4px;
+}
+footer img.logo {
+  float: left;
+  margin: 0 20px 0 0;
+}
+.container.navbar-fixed-bottom {
+  padding-bottom: 15px;
+}
+body {
+  background-image: url(fundo-api.jpg);
+  background-size: 100%;
+  background-repeat-y: initial;
+}
+a:focus, a:hover {
+  color: #002342;
+  text-decoration: none;
+  transition: 0.7s;
+}
+@media (max-width: 768px) {
+  .navbar-fixed-bottom, .navbar-fixed-top {
+    position:relative;
+  }
+}
+a {
+  color: #ffffff;
+  text-decoration: none;
+}
+a.bg-info.text-center {
+  color: black;
+}
+.navbar-fixed-bottom {
+  padding-bottom: 15px;
+  margin-top: 10%;
+  margin-bottom: 10px;
+  position: relative;
+  display: block;
+}
+p.text-center {
+  color: #c7e5ff;
+  font-size: large;
+  font-family: 'Roboto';
+}
+img.logo {
+  max-width: 100px;
+}
+.margin-med {
+  margin-top: 3%;
+}
+p {
+  color: #c7e5ff;
+}
+.modal-dialog.modal-lg {
+  max-width: 410px;
+  margin-top: 10%;
+}
+pre#modalCodeFinal {
+  margin: 0;
+}
+ol.linenums {
+	font-family: Roboto;
+}

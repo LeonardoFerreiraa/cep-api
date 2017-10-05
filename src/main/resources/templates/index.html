@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>CepTrackerApi</title>
+    <meta name="viewport" content="width=device-width" />
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="/js/run_prettify.js"></script>
+    <script src="/js/jquery.mask.min.js"></script>
+    <script src="/js/application.js"></script>
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700,900" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <link rel="stylesheet" media="screen" href="/css/doxy.css" />
+    <link rel="stylesheet" media="screen" href="/css/application.css" />
+
+</head>
+<body>
+<div class="container">
+    <div class="row margin-med">
+        <h1 class="text-center">API para consultas de cep</h1>
+        <p style="" class="text-center">Uma API para consultar CEP de maneira fácil, rápida e gratuita.<br/></p>
+    </div>
+    <div class="row margin-med" style="padding: 10px;" data-pg-collapsed="">
+        <div class="col-xs-12 col-sm-6 col-md-5 col-lg-5">
+            <div class="row">
+                <h3 class="text-center">Exemplo consulta:</h3>
+                <a href="http://cepapi.delivoro.com.br/14801210" class="bg-info text-center" target="_blank">http://cepapi.delivoro.com.br/14801210</a>
+            </div>
+            <div class="row">
+                <h3 class="text-center">FAÇA SUA consulta:</h3>
+                <p>Digite um CEP para testar a resposta da API.</p>
+                <form>
+                    <input type="text" id="consulta" class="form-control" placeholder="Insira um CEP" maxlength="9" />
+                    <button type="submit" class="btn btn-block btn-consultar btn-info" style="margin-top:10px">Consultar</button>
+                </form>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-7 col-lg-7">
+            <h3 class="text-center">Exemplo resposta:</h3>
+            <pre class="prettyprint linenums code-box"><code>{
+  "cidade":"Araraquara",
+  "logradouro":"Avenida São Geraldo",
+  "bairro":"Centro",
+  "bairroNormalizado":"centro",
+  "cep":"14801-210",
+  "tipoLogradouro":"Avenida",
+  "tipoLogradouroNormalizado":"avenida",
+  "cidadeNormalizada":"araraquara",
+  "logradouroNormalizado":"avenida sao geraldo",
+  "uf":"SP"
+}</code></pre>
+        </div>
+    </div>
+    <div class="row margin-med" style="padding: 10px;">
+        <div class="row">
+            <h1 class="text-center">Como utilizar?</h1>
+            <p style="" class="text-center"><br/></p>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <h3 class="text-center">Exemplo Curl</h3>
+                <pre class="prettyprint linenums code-box"><code>curl -X GET "http://cepapi.delivoro.com.br/14801210"</code></pre>
+                <pre class="prettyprint linenums code-box"><code>curl -s -X GET "http://cepapi.delivoro.com.br/14801210" | jq "."</code></pre>
+            </div>
+
+            <div class="col-md-12">
+                <h3 class="text-center">Exemplo PHP</h3>
+                <pre class="prettyprint linenums lang-php code-box"><code>$response = file_get_contents("http://cepapi.delivoro.com.br/14801210");
+print($response);</code></pre>
+            </div>
+            <div class="col-md-12">
+                <h3 class="text-center">Exemplo Ruby</h3>
+                <pre class="prettyprint linenums code-box"><code>require "net/http"
+
+result = Net::HTTP.get URI "http://cepapi.delivoro.com.br/14801210"
+puts result</code></pre>
+            </div>
+            <div class="col-md-12">
+                <h3 class="text-center">Exemplo JQuery</h3>
+                <pre class="prettyprint linenums code-box"><code>$.ajax({
+  type: "GET",
+  url: "http://cepapi.delivoro.com.br/14801210",
+  dataType: "JSON",
+  success: function(data) {
+    alert(data):
+  }
+});
+</code></pre>
+            </div>
+            <div class="col-md-12">
+                <h3 class="text-center">Exemplo JAVA</h3>
+                <pre class="prettyprint linenums code-box"><code>import org.apache.commons.httpclient.*;
+
+try {
+  GetMethod httpMethod = new GetMethod("http://cepapi.delivoro.com.br/14801210");
+  httpMethod.setRequestHeader("Content-type", "application/x-www-form-urlencoded;json;charset=UTF-8");
+
+  HttpClient httpClient = new HttpClient();
+  httpClient.executeMethod(httpMethod);
+
+  System.out.println(new String(httpMethod.getResponseBody()));
+} catch (Exception e) {
+  System.err.println(e.getMessage());
+}</code></pre>
+            </div>
+
+        </div>
+    </div>
+    <div class="navbar-fixed-bottom margin-med-xs" data-pg-collapsed="">
+        <div class="text-center center-block">
+            <p class="txt-railway"><a href="http://www.delivoro.com.br/" target="_blank">
+                <img src="/logo.png" class="logo" />
+            </a></p>
+            <a href="https://www.facebook.com/Delivoro/?fref=ts" target="_blank"><i class="fa fa-facebook-square fa-3x social"></i></a>
+            <a href="https://twitter.com/delivoro" target="_blank"><i class="fa fa-twitter-square fa-3x social"></i></a>
+            <a href="https://www.facebook.com/Delivoro/?fref=ts" target="_blank"><i class="fa fa-youtube-square fa-3x social"></i></a>
+        </div>
+    </div>
+</div>
+<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="codeModal" aria-hidden="true" id="modalData">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <pre id="modalCodeFinal" class=""><code></code></pre>
+        </div>
+    </div>
+</div>
+<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="codeModal" aria-hidden="true" id="modalChave">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            CHAVE
+        </div>
+    </div>
+</div>
+</body>
+</html>
