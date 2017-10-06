@@ -23,8 +23,14 @@ public class CepCrawler {
     @Value("${correios.base.url}")
     private String baseUrl;
 
-    public CepVO cepInformations(final String cep) {
+    public CepVO cepInformations(final String originalCep) {
         try {
+            String cep = trim(originalCep).replaceAll("[^\\d.]", "");
+
+            if (cep == null || cep.isEmpty()) {
+               return null;
+            }
+
             Document body = Jsoup.connect(baseUrl)
                     .data("relaxation", cep)
                     .data("Metodo", "listaLogradouro")
@@ -82,7 +88,7 @@ public class CepCrawler {
             throw new CepNotFoundException();
         } catch (Exception e) {
             e.printStackTrace();
-            return new CepVO(true, addHifen(cep));
+            return new CepVO(true, addHifen(originalCep));
         }
     }
 
