@@ -1,0 +1,3 @@
+correios:
+  base:
+    url: http://www.buscacep.correios.com.br/sistemas/buscacep/resultadoBuscaCepEndereco.cfm?t
